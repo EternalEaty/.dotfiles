@@ -1,0 +1,46 @@
+# List of config files needed
+.bashrs  # Configures bash.
+
+# Install atom
+sudo apt-get install atom
+# see https://jstaf.github.io/2018/03/25/atom-ide.html
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+export PATH=$PATH:~/miniconda3/bin
+conda install numpy pandas seaborn scikit-learn requests
+conda install ipython ipykernel python-language-server
+conda install r-essentials r-igraph
+Rscript -e 'install.packages("languageserver")'
+apm install hydrogen hydrogen-launcher platformio-ide-terminal
+apm install atom-ide-ui ide-python ide-r language-r
+sed -i '0,/Grep/{s/Grep/Grep 2/}' ~/.atom/packages/language-r/snippets/language-r.cson
+sed -i '0,/Cummulative max/{s/Cummulative max/Cummulative max 2/}' ~/.atom/packages/language-r/snippets/language-r.cson
+python3 -m ipykernel install --user
+Rscript -e 'IRkernel::installspec()'
+# Installing the bash kernel is a bit troublesome. Had to change
+# "bash" into "Shell Script" in the bash kernal specs in kernel.json
+
+# Install fzf for fuzzy finding
+sudo apt-get install fzf
+
+# Set wallpaper.
+sudo apt-get install feh
+feh --bg-scale wallpaper.jpg  # also set in i3 config file.
+
+# Configure monitors with graphical interface.
+sudo apt-get install arandr  # then run arandr
+# see 17:32 in https://www.youtube.com/watch?v=8-S0cWnLBKg
+
+# Install font that has icons for associating icons with workspaces.
+# download font awesome and copy the ttfs into ~/.fonts/
+
+# Change cdk fonts
+sudo apt-get install lxappearance
+
+# Replace dmenu with rofi
+sudo apt-get install rofi
+# also change the hotkey in the config file
+
+# Alternative file manager if nautilus is doing weird stuff
+sudo apt-get install thunar
+sudo apt-get install gnome-icon-theme-full  # do this if icons do not appear.

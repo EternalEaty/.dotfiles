@@ -1,0 +1,8 @@
+
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-shift-down': 'editor:duplicate-lines'
+  'ctrl-shift-c': 'editor:toggle-line-comments'
+
+'.platform-linux atom-text-editor':
+  'ctrl-alt-up': 'editor:add-selection-above'
+  'ctrl-alt-down': 'editor:add-selection-below'
